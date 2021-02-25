@@ -1,5 +1,5 @@
-# calculator
-
+# Calculator
+A simple calculator built with VueJs.
 ## Project setup
 ```
 npm install
