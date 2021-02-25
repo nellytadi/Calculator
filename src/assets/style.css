@@ -1,0 +1,81 @@
+body{
+    background: #000;
+}
+.calculator {
+    border: 20px solid #ffb300;
+    border-radius: 13px;
+}
+.display{
+    height: 150px;
+    text-align: right;
+    background: #fff;
+    padding: 20px;
+}
+.display .toCal{
+    font-size: 40px;
+}
+.display .result{
+    font-size: 24px;
+    color: #7b7b7b;
+    font-weight: 300;
+}
+.buttons button{
+    border:none;
+    background: none;
+    color: #ffffff;
+    font-size: 24px;
+}
+.numbers{
+    background: #777;
+}
+.numbers button{
+    padding: 20px 25px;
+    width: 33%;
+
+}
+.symbols{
+    background: #a2a2a2;
+
+}
+.symbols button{
+    padding: 13px 20px;
+    font-weight: 600;
+}
+@media (max-width: 363px) {
+    .calculator {
+        border: 10px solid #ffb300;
+
+    }
+    .numbers{
+        padding: 0;
+    }
+    .numbers button {
+        padding: 15px 20px;
+    }
+    .symbols button {
+        padding: 9px 10px;
+    }
+    /*.buttons button {*/
+    /*  font-size: 18px;*/
+    /*}*/
+}
+@media (max-width: 261px) {
+    .numbers button{
+        padding: 15px;
+    }
+    .buttons button {
+        font-size: 14px;
+    }
+    .symbols button {
+        padding: 9px 3px;
+    }
+    .display {
+        height: 115px;
+    }
+    .display .toCal {
+        font-size: 30px;
+    }
+    .display .result {
+        font-size: 20px;
+    }
+}
