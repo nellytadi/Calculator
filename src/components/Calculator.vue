@@ -67,31 +67,35 @@ export default {
       // check if cal is empty and allow symbol if -
       if (this.cal === '' && sign === '-'){
         this.cal = sign;
-        console.log("first");
+        return this.cal
       }
-      //if last two chars are signs and last is - , replace both with sign
+      if (this.cal === '-' && sign === '-') {
+        this.cal = sign;
+        return this.cal
+      }
+        //if last two chars are signs and last is - , replace both with sign
       let str =  this.cal.slice(-2)
       let arr = str.split("")
       if(this.in_array(arr[0],this.symbols) && this.in_array(arr[1],this.symbols) && arr[1] === '-'){
         this.cal = this.cal.slice(0, -2)+sign;
-        console.log("second");
+        return this.cal
       }
       //if last char is symbol replace with new sign except if -
       if (this.in_array(this.cal.slice(-1),this.symbols) && sign !== '-') {
         this.cal = this.cal.slice(0, -1)+sign;
-        console.log("third");
+        return this.cal
       }
       //if last char is symbol and sign is -
       if (this.in_array(this.cal.slice(-1),this.symbols) && sign === '-') {
         this.cal = this.cal + sign;
-        console.log("fourth");
+        return this.cal
       }
       // if last char is a digit
       if(this.in_array(this.cal.slice(-1),this.digits)){
         this.cal = this.cal + sign
-        console.log(this.cal.slice(-1) + ' fifth')
+        return this.cal
       }
-    //todo -problem when - is click at start it appears twice
+
       //todo -show result as you go
     },
     in_array(needle,haystack){
@@ -106,18 +110,21 @@ export default {
       this.cal = ''
       this.result = ''
     },
-    doSolve(){
-      try {
-        this.result = eval(this.cal);
-      } catch (e) {
-        if (e instanceof SyntaxError) {
-          alert(e.message);
-          this.doCancel()
-        } else {
-          throw e;
-        }
-      }
+    doSolve() {
+      if (this.in_array(this.cal.slice(-1), this.digits)) {
 
+        try {
+          this.result = eval(this.cal);
+        } catch (e) {
+          if (e instanceof SyntaxError) {
+            alert(e.message);
+            this.doCancel()
+          } else {
+            throw e;
+          }
+        }
+
+      }
     }
   }
 }
