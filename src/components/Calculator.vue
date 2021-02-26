@@ -29,7 +29,7 @@
               <button @click="doDigit(3)">3</button>
             </div>
             <div>
-              <button>.</button>
+              <button @click="doDigit('.')">.</button>
               <button @click="doDigit(0)">0</button>
               <button @click="doSolve">=</button>
             </div>
@@ -55,7 +55,7 @@ export default {
     return{
       cal:'',
       result:'',
-      digits:["0","1","2","3","4","5","6","7","8","9"],
+      digits:["0","1","2","3","4","5","6","7","8","9","."],
       symbols:["+","-","/","*"]
     }
   },
