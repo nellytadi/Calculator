@@ -69,6 +69,7 @@ export default {
         this.cal = sign;
         return this.cal
       }
+      // check if initial entry is - maintain single -
       if (this.cal === '-' && sign === '-') {
         this.cal = sign;
         return this.cal
