@@ -1,5 +1,6 @@
 # Calculator
-A simple calculator built with VueJs.
+A simple calculator built with VueJs.  
+Deployed App - [https://calculator777.netlify.app/](https://calculator777.netlify.app/)
 ## Project setup
 ```
 npm install
